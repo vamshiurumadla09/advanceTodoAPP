@@ -1,58 +1,154 @@
+.todo-advance {
+  position: relative;
+}
 
+.bg-img-div {
+opacity: 0.6;
+}
 
-.todo {
-  background-color: antiquewhite;
-  border: 1px solid black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px;
-  padding: 0 15px;
-  text-transform: capitalize;
-  }
-  
-  .ul-tag{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-  }
-  .ul-tag li{
-    width: 60%;
-  }
-  .input-todo{
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-  }
-  .input-todo input{
-    width: 30%;
-    text-align: center;
+.todolist{
+  position: absolute;
+  top: 2rem;
+  width: 100%;
+  padding: 20px;
+}
+
+.todolist h1{
+  text-align: center;
     text-transform: capitalize;
-  }
-  .add-todo {
-    background-color: aquamarine;
-    color: black;
-    padding: 10px 20px;
-    margin: 0px 10px;
-  }
-  .delete-todo {
-    background-color: rgb(252, 0, 0);
-    color: rgb(255, 255, 255);
-    padding: 10px 20px;
-    margin: 5px 10px;
-  }
+    color: #ffffff;
+    margin-bottom: 50px
+}
 
-  .done-todo {
-    background-color: rgb(6, 117, 20);
-    color: rgb(255, 255, 255);
-    padding: 10px 20px;
-    margin: 5px 10px;
-  }
+.todolist h1 span{
+  padding: 7px 18px;
+  background-color: #e64b40;
+  box-shadow: 2px 2px 8px 2px white;
+  border-radius: 3px;
+}
+.todolist h3{
+  text-align: center;
+  text-transform: capitalize;
+  color: #000102;
+  margin-bottom: 25px;
+}
+.todo {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    padding: 0 15px;
+    text-transform: capitalize;
+    border: none;
+    box-shadow: 0px 0px 10px 6px white;
+}
 
-  .undoTodo {
-    background-color: rgb(14, 30, 150);
-    color: rgb(255, 255, 255);
-    padding: 10px 20px;
-    margin: 5px 10px;
-  }
+
+.ul-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.ul-tag li {
+  width: 60%;
+}
+
+.input-todo {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.input-todo input {
+  width: 30%;
+  text-align: center;
+  text-transform: capitalize;
+  border: none;
+  font-family: cursive;
+  box-shadow: 0px 0px 8px 2px white;
+}
+
+.todo-btn {
+  padding: 5px 15px;
+    margin: 5px;
+    border-radius: 2px;
+    line-height: 1rem;
+    border: none;
+    box-shadow: 1px 1px 2px -1px black;
+}
+
+.todo-btn:hover {
+  transition: 0.3s;
+    box-shadow: 1px 1px 2px 1px black;
+}
+
+.add-todo {
+  background-color: lightsalmon;
+  color: #0e134b;
+  padding: 10px 20px;
+  box-shadow: 0px 0px 8px 2px white;
+  margin: 0px 1px;
+  border: none;
+  font-weight: bold;
+  font-family: bold, 600;
+}
+
+.add-todo:hover {
+  transition: 0.3s;
+    box-shadow: 1px 1px 2px 1px #424242;
+}
+.delete-todo {
+  background-color: #ed7c7c;
+  color: #ffffff;
+}
+
+.done-todo {
+  background-color: #5ccd6b;
+  color: #ffffff;
+}
+
+.undoTodo {
+  background-color: #525c95;
+  color: #ffffff;
+}
+
+.todo-completed {
+  text-decoration: line-through;
+  background-color: #a2e0e1;
+  font-weight: 600;
+}
+
+.todo-not-completed {
+  background-color: #ffe7de;
+}
+
+.filter-todos{
+   display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.filter-todos div{
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 20px;
+  font-weight: 500;
+  background-color: azure;
+  padding: 0px 5px;
+  border-radius: 16px;
+  box-shadow: 1px 1px 2px -1px #000000;
+}
+
+.filter-todos div:hover{
+  transition: 0.3s;
+    box-shadow: 1px 1px 2px 1px #000000;
+}
+
+.filter-todos span{
+  text-transform: capitalize;
+  margin: 5px;
+}
