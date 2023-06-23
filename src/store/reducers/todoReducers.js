@@ -1,6 +1,6 @@
 import {v4 as uuidv4} from 'uuid';
-const initialState = {
-    todos: [
+const initialState = localStorage.getItem('storeage')?JSON.parse(localStorage.getItem('storeage')):{
+    todos:[
         {
             title: 'Lets start',
             status: false,
@@ -9,12 +9,17 @@ const initialState = {
     ]
 }
 
+initialState.todos.map((obj)=>{
+    return localStorage.setItem('storeage', JSON.stringify(obj))
+})
 function todoReducer(state = initialState, action) {
     if (action.type === "ADDTODO") {
-        return ({
+        var todo={
             ...state,
             todos: [...state.todos, {...action.payload}]
-        })
+        }
+        localStorage.setItem('storeage', JSON.stringify(todo))
+        return (todo)
     }
 
     if (action.type === "DELETETODO") {
@@ -26,11 +31,13 @@ function todoReducer(state = initialState, action) {
                 return true
             }
         })
-        alert('Deleting task')
-        return ({
+        alert('Deleting task');
+        var deleteTodo ={
             ...state,
             todos: [...temp]
-        })
+        }
+        localStorage.setItem('storeage', JSON.stringify(deleteTodo))
+        return (deleteTodo)
     }
     
     if (action.type === 'TOGGLE_TODO_STATUS'){
@@ -44,7 +51,10 @@ function todoReducer(state = initialState, action) {
             }
             return todo
         })
-        return ({...state, todos:[...tempTodos]})
+        
+        var toggleTodo ={...state, todos:[...tempTodos]}
+        localStorage.setItem('storeage', JSON.stringify(toggleTodo))
+        return (toggleTodo)
     }
 
     return ({
