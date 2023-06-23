@@ -2,7 +2,6 @@ import { React, useState, useEffect } from 'react';
 import "../styles/todolist.css";
 import { connect } from 'react-redux';
 import {v4 as uuidv4} from 'uuid';
-import bgImg from '../assets/backgroundimg.jpg';
 import bgImg2 from '../assets/bd3.jpg';
 
 function Todolist(store) {
@@ -25,16 +24,16 @@ function Todolist(store) {
 
     if(filterKey === 'completed'){
       var temp = store.todolist.todos.filter((todo)=>{
-        return todo.status == true
+        return todo.status === true
       })
       setfiltfilteredTodos([...temp])
     }
     
     if(filterKey === 'notCompleted'){
-      var temp = store.todolist.todos.filter((todo)=>{
-        return todo.status == false
+      var temptodo = store.todolist.todos.filter((todo)=>{
+        return todo.status === false
       })
-      setfiltfilteredTodos([...temp])
+      setfiltfilteredTodos([...temptodo])
     }
 
   }, [store.todolist, filterKey])
@@ -42,7 +41,7 @@ function Todolist(store) {
   return (
     <div className='todo-advance'>
       <div className='bg-img-div'>
-       <img src={bgImg2} alt="loading" />  
+       <img src={bgImg2} alt="loading" /> 
       </div>
       <div className='container todolist'>
       <h1> <span>{`plan your day`}</span> </h1>
